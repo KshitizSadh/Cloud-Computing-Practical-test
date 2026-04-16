@@ -23,6 +23,8 @@ To understand OpenStack, it helps to map its components to the AWS services you 
 | **Horizon** | AWS Console | Web-based user interface dashboard |
 
 ---
+<img width="1917" height="1062" alt="image" src="https://github.com/user-attachments/assets/a212e29d-c134-481a-b542-c45e92feab98" />
+<img width="1919" height="1061" alt="image" src="https://github.com/user-attachments/assets/e10dd976-053e-41b8-bc52-fa84a84cc075" />
 
 ## Phase 2: Install OpenStack (DevStack)
 
@@ -47,6 +49,8 @@ git clone https://opendev.org/openstack/devstack
 cd devstack
 git checkout master
 ```
+<img width="1918" height="1054" alt="image" src="https://github.com/user-attachments/assets/60f5e78c-17a5-43b5-ba3c-ef50978ba1d6" />
+<img width="1912" height="1048" alt="image" src="https://github.com/user-attachments/assets/6942caaf-81df-4aa7-90c2-c68809c9464d" />
 
 **3. Configure and Run**
 Identify your primary network interface name using `ip addr show`. Then, create the `local.conf` file inside the `/opt/stack/devstack` directory:
@@ -68,6 +72,7 @@ LOG_COLOR=True
 IMAGE_URLS="http://download.cirros-cloud.net/0.6.2/cirros-0.6.2-x86_64-disk.img"
 EOF
 ```
+<img width="1916" height="1053" alt="image" src="https://github.com/user-attachments/assets/6b7ae21c-61d3-46da-9cee-90afd92cec35" />
 
 Run the installer (this takes 20-45 minutes):
 ```bash
@@ -76,6 +81,7 @@ sudo mkdir -p /opt/stack/logs && sudo chown -R stack:stack /opt/stack/logs
 ```
 
 ---
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/4f207227-bb88-4ae0-8d3a-00cf26455fa0" />
 
 ## Phase 3: Identity & Resource Preparation
 
@@ -89,6 +95,7 @@ openstack project create --description "Cloud Lab" --enable CloudLab-Project
 openstack user create --project CloudLab-Project --password "Student@123" --email student01@lab.local --enable student01
 openstack role add --project CloudLab-Project --user student01 member
 ```
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/96144918-f5f8-45e2-bb98-9fe2ccf2cf0f" />
 
 **2. Upload an Image (Glance)**
 We will use Ubuntu 22.04.
@@ -98,11 +105,13 @@ cd /tmp
 wget https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img
 openstack image create --container-format bare --disk-format qcow2 --file /tmp/jammy-server-cloudimg-amd64.img --public --min-ram 512 --min-disk 8 "Ubuntu 22.04 LTS"
 ```
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/6bf82e6a-0094-4355-a0e7-57e65d62ef08" />
 
 **3. Define a Flavor (Hardware Spec)**
 ```bash
 openstack flavor create --vcpus 1 --ram 1024 --disk 10 --public lab.small
 ```
+<img width="1245" height="520" alt="image" src="https://github.com/user-attachments/assets/7c001b19-14a7-4b77-b3b2-0f9833597f42" />
 
 ---
 
