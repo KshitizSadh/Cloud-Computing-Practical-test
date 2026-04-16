@@ -1,4 +1,4 @@
-
+# Practical 07 — Install OpenStack,Launch Your First Instance on OpenStack,Set Up Networking in OpenStack (Neutron)
 **OpenStack cannot run on the AWS Free Tier.** The AWS Free Tier provides `t2.micro` or `t3.micro` instances, which only have 1 vCPU and 1 GB of RAM. OpenStack (even the lightweight DevStack version) strictly requires a minimum of 4 CPU cores, 8 GB of RAM, and 50 GB of disk space. Furthermore, DevStack requires nested virtualization (a hypervisor running inside a hypervisor), which AWS only supports on their expensive `.metal` instances. If you attempt to run this setup on a Free Tier instance, the server will crash instantly. 
 
 If you want to perform this on AWS, you will need to provision a larger instance (like a `t3.xlarge` or `m5.xlarge`) and accept that **it will incur hourly charges**. 
