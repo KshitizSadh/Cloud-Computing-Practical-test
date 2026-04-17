@@ -148,6 +148,7 @@ openstack security group create lab-sg
 openstack security group rule create --protocol tcp --dst-port 22 --remote-ip 0.0.0.0/0 lab-sg
 openstack security group rule create --protocol icmp --remote-ip 0.0.0.0/0 lab-sg
 ```
+<img width="1919" height="737" alt="17763912241427759507305849971111" src="https://github.com/user-attachments/assets/c260b132-abcc-4127-beae-f77b8fb905d3" />
 
 ---
 
@@ -188,5 +189,6 @@ openstack floating ip create public
 # Assuming the output gave you an IP, e.g., 192.168.1.105
 openstack server add floating ip my-first-instance 192.168.1.105
 ```
+<img width="601" height="366" alt="17763912860038595375366463182856" src="https://github.com/user-attachments/assets/399a50f4-2315-4e8a-9759-e9cb61a86f13" />
 
 You can now track your instance's status using `openstack server list` and view boot logs via `openstack console log show my-first-instance`.
